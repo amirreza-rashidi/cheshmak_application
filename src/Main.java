@@ -19,12 +19,10 @@ public class Main extends JFrame {
     private int workSeconds = 0;
     private boolean isReminderActive = false;
 
-    // Singleton pattern برای جلوگیری از ایجاد چندین instance
     private static Main instance = null;
 
     public Main() {
         if (instance != null) {
-            // اگر instance موجود است، فقط آن را نمایش دهیم
             instance.setVisible(true);
             instance.setState(JFrame.NORMAL);
             instance.toFront();
@@ -220,7 +218,7 @@ public class Main extends JFrame {
         ReminderStarter.start();
         isReminderActive = true;
 
-        // فقط اگر workTimer در حال اجرا نباشد، آن را شروع کنیم
+
         if (workTimer == null) {
             workSeconds = 0;
             startWorkTimer();
@@ -237,7 +235,7 @@ public class Main extends JFrame {
             workTimer.cancel();
             workTimer = null;
         }
-        // زمان کار حفظ می‌شود و ریست نمی‌شود
+
     }
 
     private void startWorkTimer() {
@@ -263,12 +261,12 @@ public class Main extends JFrame {
     }
 
     private void openContactPage() {
-        // فقط صفحه جدید باز کنیم، main را dispose نکنیم
+
         SwingUtilities.invokeLater(() -> new ContactPage());
     }
 
     private void openGuidePage() {
-        // فقط صفحه جدید باز کنیم، main را dispose نکنیم
+
         SwingUtilities.invokeLater(() -> new GuidePage());
     }
 
@@ -313,12 +311,12 @@ public class Main extends JFrame {
         ReminderStarter.stop();
     }
 
-    // Static method برای دسترسی به instance
+
     public static Main getInstance() {
         return instance;
     }
 
-    // Method برای بازگرداندن به حالت normal از صفحات دیگر
+
     public static void returnToMain() {
         if (instance != null) {
             instance.setVisible(true);
