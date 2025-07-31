@@ -22,7 +22,7 @@ public class ContactPage extends JFrame {
         Font labelFont = new Font("Vazir", Font.BOLD, 24);
         Font valueFont = new Font("Vazir", Font.PLAIN, 24);
 
-        // بارگذاری گیف از resources
+
         URL gifUrl = getClass().getResource("/left.gif");
         JLabel gifLabel;
 
@@ -39,7 +39,7 @@ public class ContactPage extends JFrame {
 
         panel.add(gifLabel);
 
-        // نام
+
         JLabel nameLabel = new JLabel("امیررضا رشیدی");
         nameLabel.setFont(titleFont);
         nameLabel.setForeground(Color.WHITE);
@@ -47,7 +47,7 @@ public class ContactPage extends JFrame {
         nameLabel.setBounds(300, 50, 500, 40);
         panel.add(nameLabel);
 
-        // رشته
+
         JLabel fieldLabel = new JLabel("دانشجوی مهندسی کامپیوتر");
         fieldLabel.setFont(labelFont);
         fieldLabel.setForeground(Color.WHITE);
@@ -55,13 +55,13 @@ public class ContactPage extends JFrame {
         fieldLabel.setBounds(300, 110, 500, 30);
         panel.add(fieldLabel);
 
-        // خط جداکننده زیر رشته
+
         JSeparator separator1 = new JSeparator();
         separator1.setBounds(300, 360, 500, 2);
         separator1.setForeground(Color.WHITE);
         panel.add(separator1);
 
-        // تلگرام
+
         JLabel telLabel = new JLabel("تلگرام:");
         telLabel.setFont(labelFont);
         telLabel.setForeground(Color.WHITE);
@@ -97,13 +97,13 @@ public class ContactPage extends JFrame {
         githubValueLabel.setBounds(300, 440, 400, 30);
         panel.add(githubValueLabel);
 
-        // خط جداکننده زیر گیت‌هاب
+
         JSeparator separator3 = new JSeparator();
         separator3.setBounds(300, 480, 500, 2);
         separator3.setForeground(Color.WHITE);
         panel.add(separator3);
 
-        // ایمیل
+
         JLabel emailLabel = new JLabel("ایمیل:");
         emailLabel.setFont(labelFont);
         emailLabel.setForeground(Color.WHITE);
@@ -118,13 +118,13 @@ public class ContactPage extends JFrame {
         emailValueLabel.setBounds(300, 500, 400, 30);
         panel.add(emailValueLabel);
 
-        // خط جداکننده زیر ایمیل
+
         JSeparator separator4 = new JSeparator();
         separator4.setBounds(300, 540, 500, 2);
         separator4.setForeground(Color.WHITE);
         panel.add(separator4);
 
-        // جمله همکاری
+
         JLabel collabLabel = new JLabel("برای همکاری در پروژه‌ها آماده‌ام !");
         collabLabel.setFont(labelFont);
         collabLabel.setForeground(Color.WHITE);
@@ -132,7 +132,7 @@ public class ContactPage extends JFrame {
         collabLabel.setBounds(300, 560, 500, 40);
         panel.add(collabLabel);
 
-        // دکمه بازگشت به خانه - پایین سمت چپ
+
         JButton backButton = new JButton("بازگشت");
         backButton.setFont(valueFont);
         backButton.setBackground(new Color(8, 140, 180));
@@ -142,8 +142,8 @@ public class ContactPage extends JFrame {
         backButton.setBounds(30, 580, 180, 40);
 
         backButton.addActionListener((ActionEvent e) -> {
-            dispose(); // فقط این صفحه بسته شود
-            Main.returnToMain(); // صفحه اصلی نمایش داده شود
+            dispose(); //
+            Main.returnToMain();
         });
 
         panel.add(backButton);
