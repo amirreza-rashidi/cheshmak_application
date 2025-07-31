@@ -14,16 +14,16 @@ public class ReminderStarter {
     private static boolean firstTime = true;
     private static boolean isRunning = false;
 
-    private static long nextReminderTime = 0; // زمان دقیق reminder بعدی
-    private static final long INTERVAL = 1 * 60 * 1000; // 1 دقیقه برای تست - اصل 20 دقیقه
+    private static long nextReminderTime = 0;
+    private static final long INTERVAL = 1 * 60 * 1000; // 1 دقیقه برای تست
 
     public static void start() {
-        // اگر قبلاً در حال اجرا است، دوباره شروع نکنیم
+
         if (isRunning) {
             return;
         }
 
-        // پاک کردن timer قبلی اگر وجود دارد
+
         if (timer != null) {
             timer.cancel();
             timer = null;
@@ -34,13 +34,13 @@ public class ReminderStarter {
 
         long now = System.currentTimeMillis();
 
-        // اگر اولین بار است، پیام شروع رو نشون بده و زمان بعدی رو set کن
+
         if (firstTime) {
             try {
                 SwingUtilities.invokeLater(() -> ShortReminder.showFirstTime());
                 firstTime = false;
                 shortReminderCount = 0;
-                // اولین reminder بعدی دقیقاً بعد از INTERVAL باشد
+
                 nextReminderTime = now + INTERVAL;
                 System.out.println("اولین reminder (شروع کنیم) نمایش داده شد.");
                 System.out.println("Reminder بعدی در: " + new java.util.Date(nextReminderTime));
@@ -48,12 +48,12 @@ public class ReminderStarter {
                 System.err.println("خطا در نمایش reminder اولیه: " + e.getMessage());
             }
         } else {
-            // اگر restart میکنیم، زمان بعدی رو از الان محاسبه کن
+
             nextReminderTime = now + INTERVAL;
             System.out.println("Restart شد. Reminder بعدی در: " + new java.util.Date(nextReminderTime));
         }
 
-        // بررسی زمان واقعی هر 5 ثانیه
+
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -81,8 +81,8 @@ public class ReminderStarter {
                             }
                         });
 
-                        // زمان reminder بعدی رو دقیقاً INTERVAL بعد از زمان قبلی set کن
-                        // نه زمان فعلی!
+
+
                         nextReminderTime += INTERVAL;
                         System.out.println("Reminder بعدی در: " + new java.util.Date(nextReminderTime));
                     }
@@ -90,7 +90,7 @@ public class ReminderStarter {
                     System.err.println("خطا در timer task: " + e.getMessage());
                 }
             }
-        }, 5 * 1000, 5 * 1000); // هر 5 ثانیه بررسی کن
+        }, 5 * 1000, 5 * 1000);
 
         System.out.println("ReminderStarter شروع شد. FirstTime: " + firstTime + ", Count: " + shortReminderCount);
     }
@@ -102,7 +102,7 @@ public class ReminderStarter {
         }
         isRunning = false;
 
-        // وقتی متوقف میشه، برای شروع بعدی باید دوباره پیام اولیه رو نشون بده
+
         firstTime = true;
         shortReminderCount = 0;
         nextReminderTime = 0;
@@ -153,7 +153,7 @@ public class ReminderStarter {
         System.out.println("==================");
     }
 
-    // Method برای نمایش زمان reminder بعدی
+
     public static void showNextReminderTime() {
         if (!isRunning) {
             System.out.println("Timer متوقف است");
