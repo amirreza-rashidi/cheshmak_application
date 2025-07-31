@@ -9,7 +9,7 @@ import java.awt.geom.RoundRectangle2D;
 public class LongReminder {
 
     public static void show() {
-        final int totalSeconds = 100; // زمان کل
+        final int totalSeconds = 100;
 
         JFrame frame = new JFrame();
         frame.setUndecorated(true);
@@ -17,14 +17,14 @@ public class LongReminder {
         frame.setLocationRelativeTo(null);
         frame.setAlwaysOnTop(true);
 
-        // گوشه‌های گرد برای فریم
+
         frame.setShape(new RoundRectangle2D.Double(0, 0, 550, 400, 25, 25));
 
         JPanel mainPanel = new JPanel();
-        mainPanel.setBackground(new Color(0, 0, 0)); // مشکی خالص
+        mainPanel.setBackground(new Color(0, 0, 0));
         mainPanel.setLayout(new BorderLayout());
 
-        // پنل محتوا
+
         JPanel contentPanel = new JPanel();
         contentPanel.setBackground(new Color(0, 0, 0));
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
@@ -60,18 +60,18 @@ public class LongReminder {
 
         mainPanel.add(contentPanel, BorderLayout.CENTER);
 
-        // پنل پایین برای دکمه‌ها و تایمر
+
         JPanel bottomPanel = new JPanel(new BorderLayout());
         bottomPanel.setBackground(new Color(0, 0, 0));
         bottomPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 15, 20));
 
-        // دکمه Skip (مینیمایز کن)
+
         JButton skipButton = new JButton("برم کنار؟");
         styleButton(skipButton);
         skipButton.addActionListener(e -> frame.setState(JFrame.ICONIFIED));
         bottomPanel.add(skipButton, BorderLayout.WEST);
 
-        // دکمه Lock Screen
+
         JButton lockButton = new JButton("قفل کنم؟");
         styleButton(lockButton);
         lockButton.addActionListener(e -> {
@@ -82,8 +82,6 @@ public class LongReminder {
             }
         });
         bottomPanel.add(lockButton, BorderLayout.EAST);
-
-        // برچسب تایمر شمارش معکوس وسط - بزرگ و مشخص
         JLabel timerLabel = new JLabel("بستن خودکار در 100 ثانیه", SwingConstants.CENTER);
         timerLabel.setForeground(new Color(255, 255, 255)); // سفید مشخص
         timerLabel.setFont(new Font("Segoe UI", Font.BOLD, 15)); // بزرگتر و bold
@@ -93,7 +91,7 @@ public class LongReminder {
         frame.add(mainPanel);
         frame.setVisible(true);
 
-        // تایمر شمارش معکوس با Swing Timer
+
         final int[] remaining = {totalSeconds};
         new javax.swing.Timer(600, e -> {
             remaining[0]--;
@@ -107,23 +105,23 @@ public class LongReminder {
 
     private static void styleButton(JButton button) {
         button.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        button.setForeground(new Color(255, 255, 255)); // متن سفید
-        button.setBackground(new Color(60, 60, 60)); // خاکستری تیره
+        button.setForeground(new Color(255, 255, 255));
+        button.setBackground(new Color(60, 60, 60));
         button.setFocusPainted(false);
         button.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(new Color(120, 120, 120), 1),
                 BorderFactory.createEmptyBorder(6, 12, 6, 12)
         ));
         button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        button.setPreferredSize(new Dimension(100, 35)); // کوچکتر و یکسان
+        button.setPreferredSize(new Dimension(100, 35));
 
-        // گوشه‌های گرد برای دکمه‌ها
+
         button.setBorder(BorderFactory.createCompoundBorder(
                 new RoundedBorder(8),
                 BorderFactory.createEmptyBorder(6, 12, 6, 12)
         ));
 
-        // افکت هاور
+
         button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent evt) {
@@ -136,7 +134,7 @@ public class LongReminder {
         });
     }
 
-    // کلاس کمکی برای ایجاد حاشیه گرد
+
     static class RoundedBorder implements javax.swing.border.Border {
         private int radius;
         RoundedBorder(int radius) {
