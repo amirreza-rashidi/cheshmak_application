@@ -12,7 +12,6 @@ public class GuidePage extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        // پنجره بدون حاشیه و با گوشه‌های گرد
         setUndecorated(true);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30));
 
@@ -44,7 +43,7 @@ public class GuidePage extends JFrame {
         );
         panel.add(textArea);
 
-        // گیف متحرک پایین متن
+
         ImageIcon downGif = new ImageIcon(getClass().getResource("/down.gif"));
 
         JLabel downGifLabel = new JLabel(downGif);
@@ -57,7 +56,7 @@ public class GuidePage extends JFrame {
         downGifLabel.setBounds(gifX, gifY, gifWidth, gifHeight);
         panel.add(downGifLabel);
 
-        // دکمه بازگشت به خانه - پایین سمت چپ
+
         JButton backButton = new JButton("بازگشت");
         backButton.setFont(font);
         backButton.setBackground(new Color(8, 140, 180));
@@ -67,8 +66,8 @@ public class GuidePage extends JFrame {
         backButton.setBounds(30, 700, 180, 40);
 
         backButton.addActionListener((ActionEvent e) -> {
-            dispose(); // فقط این صفحه بسته شود
-            Main.returnToMain(); // صفحه اصلی نمایش داده شود
+            dispose();
+            Main.returnToMain();
         });
 
         panel.add(backButton);
