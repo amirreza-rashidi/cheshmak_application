@@ -105,7 +105,7 @@ public class ShortReminder {
         title.setFont(new Font("Segoe UI", Font.BOLD, 26));
         title.setForeground(new Color(0, 246, 255));
 
-        JLabel msg = new JLabel("چشماتو به چپ و راست حرکت بده و دورتر نگاه کن", SwingConstants.CENTER);
+        JLabel msg = new JLabel("چشماتو به چپ و راست حرکت بده و دورتر رو نگاه کن", SwingConstants.CENTER);
         msg.setAlignmentX(Component.CENTER_ALIGNMENT);
         msg.setFont(new Font("Segoe UI", Font.PLAIN, 17));
         msg.setForeground(new Color(255, 255, 255));
