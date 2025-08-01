@@ -15,7 +15,7 @@ public class ReminderStarter {
     private static boolean isRunning = false;
 
     private static long nextReminderTime = 0;
-    private static final long INTERVAL = 2 * 60 * 1000; // 1 دقیقه برای تست
+    private static final long INTERVAL = 20 * 60 * 1000; // 1 دقیقه برای تست
 
     public static void start() {
 

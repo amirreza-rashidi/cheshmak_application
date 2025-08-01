@@ -147,6 +147,10 @@ public class Main extends JFrame {
         workTimeLabel.setFont(clockFont);
         workTimeLabel.setForeground(clockColor);
 
+        JPanel leftClockPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
+        leftClockPanel.setBackground(lavender);
+        leftClockPanel.add(workTimeLabel);
+
         JPanel rightClockPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 5, 0));
         rightClockPanel.setBackground(lavender);
         rightClockPanel.add(clockLabel);
@@ -154,7 +158,7 @@ public class Main extends JFrame {
 
         JPanel clockPanel = new JPanel(new BorderLayout());
         clockPanel.setBackground(lavender);
-        clockPanel.add(workTimeLabel, BorderLayout.WEST);
+        clockPanel.add(leftClockPanel, BorderLayout.WEST);
         clockPanel.add(rightClockPanel, BorderLayout.EAST);
 
         panel.add(clockPanel, BorderLayout.SOUTH);
