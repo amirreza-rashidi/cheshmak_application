@@ -143,15 +143,14 @@ public class Main extends JFrame {
         clockTextLabel.setFont(clockFont);
         clockTextLabel.setForeground(clockColor);
 
+        workTimeLabel = new JLabel("زمان کار: 00:00");
+        workTimeLabel.setFont(clockFont);
+        workTimeLabel.setForeground(clockColor);
+
         JPanel rightClockPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 5, 0));
         rightClockPanel.setBackground(lavender);
         rightClockPanel.add(clockLabel);
         rightClockPanel.add(clockTextLabel);
-
-        workTimeLabel = new JLabel("زمان کار: 00:00");
-        workTimeLabel.setFont(clockFont);
-        workTimeLabel.setForeground(clockColor);
-        workTimeLabel.setHorizontalAlignment(SwingConstants.LEFT);
 
         JPanel clockPanel = new JPanel(new BorderLayout());
         clockPanel.setBackground(lavender);
