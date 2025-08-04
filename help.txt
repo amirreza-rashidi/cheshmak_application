@@ -5,5 +5,3 @@ else{
 // if you like this project   give me stars !  
 
 
-
-there is jre in folder 
