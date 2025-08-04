@@ -1,0 +1,9 @@
+if (you have jdk )
+                  {so you can use jar and all .exe files}
+else{
+     you have to install jkd or use my .exe file in folder that has jre and jar file }
+// if you like this project   give me stars !  
+
+
+
+there is jre in folder 
