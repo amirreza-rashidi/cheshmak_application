@@ -35,7 +35,7 @@ public class LongReminder {
         title.setFont(new Font("Segoe UI", Font.BOLD, 28));
         title.setForeground(new Color(255, 215, 0));
 
-        JLabel msg = new JLabel("یکم بیشتر استراحت کن و به خودت برس عزیزم", SwingConstants.CENTER);
+        JLabel msg = new JLabel("یکم بیشتر استراحت کن و به خودت برس عزیزم!", SwingConstants.CENTER);
         msg.setAlignmentX(Component.CENTER_ALIGNMENT);
         msg.setFont(new Font("Segoe UI", Font.PLAIN, 18));
         msg.setForeground(new Color(255, 255, 255));
